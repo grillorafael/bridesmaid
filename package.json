@@ -1,0 +1,21 @@
+{
+    "name": "wedding-colors",
+    "version": "1.0.0",
+    "description": "",
+    "scripts": {
+        "start": "cd www && php -S 0.0.0.0:8000",
+        "css:build": "node-sass --output-style compressed scss/index.scss | postcss --use autoprefixer >  www/css/application.min.css",
+        "css:watch": "gacher -p 'www/components/**/*.scss scss/*.scss' -c 'npm run css:build'",
+        "watch": "parallelshell 'npm start' 'npm run css:watch'"
+    },
+    "devDependencies": {
+        "autoprefixer": "^5.2.0",
+        "gacher": "^1.1.1",
+        "node-sass": "^3.2.0",
+        "nodemon": "^1.4.0",
+        "npm-build-tools": "^2.1.1",
+        "parallelshell": "^2.0.0",
+        "postcss-cli": "^1.5.0",
+        "uglifyjs": "^2.4.10"
+    }
+}
